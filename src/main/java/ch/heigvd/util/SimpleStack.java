@@ -1,4 +1,4 @@
-package ch.heigvd.poo;
+package ch.heigvd.util;
 
 public class SimpleStack<T> {
     public static void main(String[] args) {
@@ -24,4 +24,9 @@ public class SimpleStack<T> {
 
         return el;
     }
+
+    public SimpleStackIterator<T> iterator() {
+        return new SimpleStackIterator<T>(head);
+    }
 }
+
