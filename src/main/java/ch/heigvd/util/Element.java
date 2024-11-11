@@ -1,4 +1,4 @@
-package ch.heigvd.poo;
+package ch.heigvd.util;
 
 public class Element<T> {
     private T value;

@@ -1,4 +1,4 @@
-package ch.heigvd.poo;
+package ch.heigvd.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -38,5 +38,19 @@ class SimpleStackTest {
     void testPushNull() {
         stack.push(null);
         assertNull(stack.pop());
+    }
+
+    // iterators
+    @Test
+    void testIterator() {
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        SimpleStackIterator<Integer> it = stack.iterator();
+
+        assertEquals(3, it.next());
+        assertEquals(2, it.next());
+        assertEquals(1, it.next());
     }
 }
