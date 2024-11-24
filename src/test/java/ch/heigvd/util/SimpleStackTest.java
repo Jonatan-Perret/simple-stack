@@ -54,6 +54,16 @@ class SimpleStackTest {
     }
 
     @Test
+    void testIteratorEmptyStack() {
+        SimpleStackIterator<Integer> it = stack.iterator();
+        assertNull(it.next());
+        stack.push(1);
+        assertEquals(1, it.next());
+        stack.pop();
+        assertNull(it.next());
+    }
+
+    @Test
     void testToString() {
         stack.push(1);
         stack.push(2);

@@ -12,6 +12,10 @@ public class SimpleStackIterator<T> {
     }
 
     public T next() {
+        // if there is no next element, return null
+        if (current.getNext() == null) {
+            return null;
+        }
         current = current.getNext();
         return current.getValue();
     }
