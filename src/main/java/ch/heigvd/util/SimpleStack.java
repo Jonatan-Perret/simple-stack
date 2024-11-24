@@ -31,6 +31,10 @@ public class SimpleStack<T> {
         return new SimpleStackIterator<T>(head);
     }
 
+    public Boolean isEmpty() {
+        return head.getNext() == null;
+    }
+
     public String toString() {
         String str = "";
         SimpleStackIterator<T> it = iterator();
