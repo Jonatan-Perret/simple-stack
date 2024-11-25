@@ -68,8 +68,8 @@ class SimpleStackTest {
         stack.push(2);
         stack.push(3);
 
-        Object[] arr = stack.toArray();
-        assertEquals(3, arr.length);
+        Integer[] arr = stack.toArray();
+
         assertEquals(3, arr[0]);
         assertEquals(2, arr[1]);
         assertEquals(1, arr[2]);
