@@ -7,6 +7,7 @@ public class SimpleStack<T> {
     }
 
     Element<T> head;
+    int size = 0;
 
     public SimpleStack() {
         head = new Element<T>(null);
@@ -17,12 +18,14 @@ public class SimpleStack<T> {
 
         el.setNext(head.getNext());
         head.setNext(el);
+        size++;
     }
 
     public T pop() {
         T el = head.getNext().getValue();
 
         head.setNext(head.getNext().getNext());
+        size--;
 
         return el;
     }
@@ -46,15 +49,17 @@ public class SimpleStack<T> {
         return str;
     }
 
-    public Object[] toArray() {
-        LinkedList<T> list = new LinkedList<T>();
+    public T[] toArray() {
+        T[] arr = (T[]) java.lang.reflect.Array.newInstance(head.getNext().getValue().getClass(), size);
         SimpleStackIterator<T> it = iterator();
+        int count = 0;
 
         while (it.hasNext()) {
-            list.add(it.next());
+            arr[count] = it.next();
+            count++;
         }
 
-        return list.toArray();
+        return arr;
     }
 }
 
